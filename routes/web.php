@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\SemnasPaymentController;
+use App\Http\Controllers\QrCodeController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 
@@ -61,5 +62,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/upload-payment', [SemnasPaymentController::class, 'showForm'])->name('semnas.payment.form');
     Route::post('/upload-payment', [SemnasPaymentController::class, 'uploadPayment'])->name('semnas.payment.upload');
 });
+
+Route::get('/scan', [QrCodeController::class, 'scan']);
+Route::post('/scan', [QrCodeController::class, 'processScan']);
+
 
 require __DIR__.'/auth.php';
