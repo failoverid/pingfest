@@ -1,0 +1,94 @@
+/*             kotak-kotak container dll            */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1vw;
+    width: clamp(250px, 16vw, 300px);
+    box-sizing: border-box;
+}
+.sidebar-container {
+    position: relative;
+    background-color: var(--biru_2);
+    box-sizing: border-box;
+    height: 100%;
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 22px;
+    padding: 20px;
+}
+.profile-name {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.username {
+    font-size: var(--content_md);
+    font-weight: 600;
+}
+.user-description {
+    font-size: var(--content_sm);
+    font-weight: 500;
+}
+
+/*          link-link dll            */
+
+.button-container {
+    display: flex;
+    gap: 1vw;
+    padding: 24px;
+    margin-bottom: 6px;
+    align-items: start;
+}
+.button-container p {
+    font-size: var(--content_sm);
+}
+.button-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.button-container div{
+    display: flex;
+    justify-content: start;
+    padding: 2px;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+.material-symbols-outlined {
+    color: var(--biru_1);
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 24px;
+    right: 0;
+    left: 0;
+}
+
+main {
+    margin-left: clamp(250px, 16vw, 300px);
+    padding-top: 4vh;
+    padding-left: 24px;
+}
+.welcome-message {
+    color: var(--biru_1);
+    font-size: var(--title_md);
+    font-weight: 800;
+}
+.welcome-message span{
+    text-decoration: underline;
+    color: var(--biru_2);
+}

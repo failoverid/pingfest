@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    --biru_1: #003049;
+    --biru_2: #48c4ba;
+    --biru_3: #DAFFFB;
+    --biru_4: #053DCE;
+    --merah_1: #4F0A1F;
+    --merah_2: #C1121F;
+    --beige: #FDF0D5;
+    --purple: #6A05CE;
+    --lightgray: #efefef;
+    --gray: #b9b9b9;
+    --darkgray: #282828;
+    --transparent_black: rgba(0, 0, 0, 0.2);
+    --transparent: rgba(0,0,0,0);
+    
+    --title_lg: clamp(2rem, 5vw, 3.5rem);
+    --title_md: clamp(1.8rem, 4vw, 3rem);
+    --title_sm: clamp(1.2rem, 3vw, 2rem);
+    --content_lg: clamp(1rem, 3vw, 1.5rem);
+    --content_md: clamp(0.8rem, 2vw, 1rem);
+    --content_sm: clamp(0.6rem, 1.8vw, 0.8rem);
+}
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height: 175%;
+    z-index: 5;
+}
+.blur {
+    z-index: 0;
+}
+body {
+    margin: 0;
+    font-family: "Plus Jakarta Sans", Helvetica, sans-serif;
+}
+section {
+    display: flex;
+    margin-bottom: 100px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+button:hover {
+    opacity: 0.8;
+}
+button:active {
+    opacity: 0.6;
+}
+a {
+    text-decoration: none;
+    margin: none;
+    color: black;
+}
+.content-area {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 14px;
+    width: clamp(250px, 80vw, 1200px);
+}
+.pingfest-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    .content-area {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .content-area {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+    .pingfest-grid {
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 1rem;
+    }
+}
+@media screen and (max-width: 425px) {
+    section {
+        overflow: hidden;
+    }
+    .content-area {
+        padding: 0px;
+        margin: 0px;
+        width: clamp(300px, 80vw, 1200px);
+        
+    }
+    .pingfest-grid {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 0.8rem;
+    }
+}
+@media screen and (max-height: 700px) {
+    section {
+        margin-bottom: 50px;
+    }
+}

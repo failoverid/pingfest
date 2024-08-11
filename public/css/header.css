@@ -1,0 +1,128 @@
+/* header */
+header {
+    position: fixed;
+    bottom: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2000;
+}
+header .content-area {
+    display: flex;
+    justify-content: center;
+    width: clamp(650px, 80vw, 768px);
+}
+.navbar-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+    background: white;
+    box-shadow: 2px 2px 6px var(--transparent_black);
+    padding: 16px;
+    border-radius: 22px;
+    border: 2px solid var(--biru_1);
+}
+.navbar {
+    padding: 0px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+/* nav items */
+.nav-links {
+    transition: 200ms ease-in-out;
+}
+.nav-links:hover {
+    transform: translateY(-4px);
+}
+.nav-links a {
+    color: var(--biru_1);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 200ms ease-out;
+}
+.nav-links a:hover {
+    color: var(--biru_2);
+    font-weight: 700;
+}
+.login-btn button {
+    background: none;
+    padding: 14px 48px;
+    border: 2px solid var(--biru_1);
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 200ms ease-out;
+}
+.login-btn button:hover {
+    background: var(--biru_1);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    border: 2px solid rgba(0,0,0,0.5);
+}
+.login-btn button:active {
+    opacity: 0.5;
+}
+.expand-btn {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar-container, .navbar {
+        display: none;
+    }
+    .expand-btn {
+        font-size: 1.2rem;
+        display: flex;
+        padding: 20px 24px;
+        border-radius: 12px;
+        background: white;
+        border: none;
+        border: 1px solid var(--biru_1);
+    }
+    .expand-btn:active {
+        opacity: 0.6;
+    }
+    header .content-area {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-responsive {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 36px;
+        align-items: end;
+        padding: 20px;
+    }
+    .navbar-container-responsive {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 36px;
+        align-items: end;
+        background: white;
+        box-shadow: 2px 2px 6px var(--transparent_black);
+        border-radius: 22px;
+        border: 2px solid var(--biru_1);
+    }
+    .login-btn {
+        padding: 24px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .expand-btn {
+        font-size: 1rem;
+        padding: 14px 18px;
+    }
+}
