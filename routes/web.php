@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\SemnasPaymentController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+
 
 Route::get('/', function () {
     return view('welcome2');
@@ -54,5 +56,10 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::post('pendaftaran-cp/', [PendaftaranController::class, 'submit_cp']);
 Route::post('pendaftaran-bot/', [PendaftaranController::class, 'submit_bot']);
 Route::post('pendaftaran-ml/', [PendaftaranController::class, 'submit_ml']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/upload-payment', [SemnasPaymentController::class, 'showForm'])->name('semnas.payment.form');
+    Route::post('/upload-payment', [SemnasPaymentController::class, 'uploadPayment'])->name('semnas.payment.upload');
+});
 
 require __DIR__.'/auth.php';
