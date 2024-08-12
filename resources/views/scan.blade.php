@@ -6,7 +6,6 @@
 </head>
 <body>
     <h1>Nguawur Cik</h1>
-    <img src="https://i.pinimg.com/474x/09/ba/92/09ba9297ec464820a46ea6af02a27077.jpg" alt="Photo">
     <div id="reader" style="width:500px;"></div>
     <form method="POST" action="/scan">
         @csrf

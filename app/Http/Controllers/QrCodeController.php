@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Models\User;
 
 class QrCodeController extends Controller
@@ -19,12 +20,14 @@ class QrCodeController extends Controller
 
         if ($user) {
             return response()->json([
-                'message' => "Silahkan Masuk dan menikmati Acara Seminar!",
+                'status' => 'success',
+                'message' => 'Selamat menikmati acara seminar!',
                 'name' => $user->name
             ]);
         } else {
             return response()->json([
-                'message' => "Data Tidak Ditemukan!"
+                'status' => 'error',
+                'message' => 'Data tidak ditemukan!'
             ]);
         }
     }
